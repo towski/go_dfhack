@@ -62,19 +62,7 @@ extern "C" {
         const char* names[100];
     };
 
-	typedef void* Foo;
-	Foo FooInit(void);
-	void FooFree(Foo);
     int Size();
-	const char* GetJobType(int);
-	const char* GetFirstName(int);
-	const char* GetThoughts(int);
-	const char* GetCurrentJob(int);
-	const char* GetHappiness(int);
-	bool SetUnitLabors(struct Labor*[], int);
-    void GetEnums(struct Enums*);
-	void GetDwarf(int, struct CDwarf*);
-    int GetId(int);
     void Update();
     void Exit();
     int Paused();

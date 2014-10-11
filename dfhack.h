@@ -8,6 +8,8 @@
 extern "C" {
 #endif
     void Connect();
+    void Update();
+    struct CDwarf* GetDwarf(int i);
 #ifdef __cplusplus
 }
 #endif

@@ -9,3 +9,11 @@ import _ "fmt"
 func Connect(){
     C.Connect()
 }
+
+func Update(){
+    C.Update()
+}
+
+func GetDwarf(x int) *C.struct_CDwarf{
+    return C.GetDwarf(C.int(x))
+}
