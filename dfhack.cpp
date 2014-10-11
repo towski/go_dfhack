@@ -39,9 +39,7 @@ std::string output;
 std::string thought_string = "";
 
 void Connect(void) {
-    printf("hey maybe\n");
     network_client->connect();
-    printf("hey maybe2\n");
     DFHack::RemoteFunction<dfproto::EmptyMessage, dfproto::ListEnumsOut> list_enums;
     list_units.bind(network_client, "ListUnits");
     get_world_info.bind(network_client, "GetWorldInfo");
@@ -49,7 +47,6 @@ void Connect(void) {
     set_unit_labors.bind(network_client, "SetUnitLabors");
     in = new dfproto::ListUnitsIn();
     out = new dfproto::ListUnitsOut();
-    printf("hey maybe3\n");
     in->set_scan_all(true);
     in->set_race(465);
     in->set_alive(true);
@@ -59,7 +56,6 @@ void Connect(void) {
     in->mutable_mask()->set_misc_traits(true);
     //my_call(network_client->default_output(), dfproto::ListUnitsIn::default_instance, dfproto::ListUnitsOut::default_instance);
     world_info_out = new dfproto::GetWorldInfoOut();
-    printf("hey maybe4\n");
 
     std::ostringstream stream;
     DFHack::color_ostream_wrapper *df_output = new DFHack::color_ostream_wrapper(stream);
@@ -70,12 +66,9 @@ void Connect(void) {
     while (std::getline(iss, item, '\n')) {
         elems.push_back(item);
     }
-    printf("hey maybe5\n");
     std::cout << std::to_string(elems.size()) + "\n";
 
     enums_out = new dfproto::ListEnumsOut();
-    printf("hey maybe6\n");
     list_enums(new dfproto::EmptyMessage(), enums_out);
-
 }
 
